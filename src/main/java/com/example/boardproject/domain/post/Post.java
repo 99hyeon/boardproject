@@ -18,10 +18,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     private String title;
-
-    @NotBlank
     private String contents;
 
 
