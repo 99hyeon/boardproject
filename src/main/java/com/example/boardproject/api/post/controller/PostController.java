@@ -4,6 +4,7 @@ import com.example.boardproject.api.post.dto.PostCreateRequest;
 import com.example.boardproject.api.post.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ public class PostController {
     public ResponseEntity<Void> createPost(@RequestBody @Valid PostCreateRequest request){
         postService.createPost(request);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }

@@ -2,10 +2,8 @@ package com.example.boardproject.api.post.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 public class PostCreateRequest {
 
     @NotBlank(message = "제목은 필수입니다.")

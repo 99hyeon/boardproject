@@ -12,12 +12,7 @@ public class PostService {
 
     private final PostRepository postRepository;
 
-    public void createPost(PostCreateRequest request) {
-        Post post = Post.builder()
-                .title(request.getTitle())
-                .contents(request.getContents())
-                .build();
-
-        postRepository.save(post);
+    public Post createPost(PostCreateRequest request) {
+        return postRepository.save(Post.createFrom(request));
     }
 }
